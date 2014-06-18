@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	#screen{
+		background-color: white;
+		border: solid 1px black;
+		width: 338px;
+		height: 600px;
+		overflow:auto;
+	}
+
+	.banner{
+		background-color: #4169E1;
+		height: 70px;
+		width: 100%;
+
+	}
+
+	.trawlCatcher{
+		font-size: 26px;
+		font-family: Helvetica;
+		color: white;
+		text-align: center;
+		padding-top: 20px;
+		font-weight: 100;
+	}
+
+	.search{
+		background-color: #87CEEB;
+		height: 30px;
+		width: 100%;
+
+		font-size: 16px;
+		font-family: Helvetica;
+		color: white;
+		text-align: center;
+		padding-top: 13px;
+		font-weight: 100;
+	}
+
+	.rowMain{
+		width: 100%;
+		height: 100px;
+		border-top: solid 1px #c1cbd0;
+		border-bottom: solid 1px #c1cbd0;
+		/*background-color: blue;*/
+	}
+
+	.pictureMain{
+		width: 100px;
+		height: 100px;
+		background-color: black;
+		float: left;
+		border-right: solid 2px #c1cbd0;
+		cursor: pointer;
+	}
+	
+	.pictureMain img {
+		height: 100px;
+		width: 100px;
+	}
+
+	.infoMain{
+		height: 100px;
+		/*background-color: orange;*/
+
+	}
+	
+	.rowMain, .rowMain-2 {
+		font-family:Helvetica;
+	}
+
+	.boatName{
+		font-size: 22px;
+		margin-left: 105px;
+		padding: 7px;
+		color: #666;
+		font-weight: 100;
+	}
+
+	.lastSeen{
+		font-size: 16px;
+		margin-left: 120px;
+		padding: -7px 7px 7px 7px;
+		margin: 1px 10px 7px 130px;
+		color: #888;
+		font-weight: 100;
+
+		font-style: italic;
+	}
+
+	.location{
+		font-size: 20px;
+		float: right;
+		padding: -5px 7px 7px 7px;
+		margin: 6px 7px 7px 0px;
+		color: #888;
+		font-weight: 100;
+
+		font-style: italic;
+	}
+
+	.username{
+		font-size: 16px;
+		padding: -5px 7px 7px 7px;
+		margin: 1px 10px 7px 130px;
+		color: #888;
+		font-weight: 100;
+
+		font-style: italic;
+	}
+
+
+
+
+
+
+
+
+
+
+ .searchBox{
+                border-radius:8px;
+                border: none;
+                height:12px;
+                width:170px;
+                padding: 5px;
+                margin-bottom: 7px;
+                margin-top: 9px;
+				font-family: Helvetica;
+        }
+
+/*----------------------------------------- ONE ------------------------------*/
+
+	#backButton, #galleryBackButton {
+		position: absolute;
+		top: 19px;
+		left: 19px;
+		float: left;
+		height: 50px;
+		width: 50px;
+	}
+	
+	#backButton img, #galleryBackButton img {
+		width:50px;
+		height:50px;
+		cursor:pointer;
+	}
+
+	#screen-2{
+		background-color: white;
+		border: solid 1px black;
+		width: 338px;
+		height: 600px;
+	}
+
+	#screen2-2{
+		background-color: white;
+		width: 338px;
+		height: 530px;
+		overflow: auto;
+	}
+
+	.banner-2{
+		background-color: #4169E1;
+		height: 70px;
+	}
+
+	.trawlCatcher-2{
+		font-size: 26px;
+		font-family: Helvetica;
+		color: white;
+		text-align: center;
+		padding-top: 20px;
+		font-weight: 100;
+	}
+
+	.rowMain-2{
+		width: 100%;
+		height: 150px;
+		border-bottom: solid 1px #c1cbd0;
+		background-color: #87CEEB;
+	}
+
+	.pictureMain-2{
+		width: 150px;
+		height: 150px;
+		background-color: black;
+		float: left;
+		border-right: solid 1px #c1cbd0;
+		cursor: pointer;
+	}
+
+	
+	.infoTop-2{
+		font-size: 20px;
+		font-family: Helvetica;
+		padding: 30px 7px 7px 7px;
+		margin-left: 150px;
+
+		text-align: center;
+
+		color: white;
+		font-weight: 100;
+	}
+
+	.boatName-2{
+		font-size: 22px;
+		font-family: Helvetica;
+		font-weight: ;
+		margin-left: 150px;
+		padding: 7px;
+		color: #666;
+		font-weight: 100;
+	}
+
+	.infoMain-2{
+		height: 50px;
+		border-top: #c1cbd0 solid 1px;
+	}
+
+	.lastSeen-2{
+		font-size: 20px;
+		font-family: Helvetica;
+		padding: 12px 7px 0px 7px;
+		color: #888;
+		font-weight: 100;
+		float: left;
+		font-style: italic;
+	
+	}
+
+	.location-2{
+		font-size: 20px;
+		font-family: Helvetica;
+		padding: 12px 7px 0px 7px;
+		color: #888;
+		font-weight: 100;
+		float: right;
+		font-style: italic;
+	}
+	
+	#searchContainer {
+		text-align: center;
+		background-color: #87CEEB;
+		font-size: 16px;
+		font-family: Helvetica;
+		color: white;
+		text-align: center;
+		font-weight: 100;
+	}
+	
+	/*----------------------------------------- TWO ------------------------------*/
+	
+	/*
+	  Hide radio button (the round disc)
+	  we will use just the label to create pushbutton effect
+	*/
+	input[type=radio] {
+		display:none; 
+		margin:10px;
+	}
+	 
+	/*
+	  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+	  Add some margin, padding to label
+	*/
+	input[type=radio] + label {
+		display:inline-block;
+		margin:-2px;
+		padding: 4px 12px;
+		background-color: #87CEEB;
+		border-color: red;
+	}
+	/*
+	 Change background color for label next to checked radio button
+	 to make it look like highlighted button
+	*/
+	input[type=radio]:checked + label { 
+	   background-image: none;
+		background-color:#4169E1;
+		border-radius: 10px;
+	}
+	
+	#map {
+		width:100%;
+		height:350px;
+	}
+	
+	#galleryContainer {
+		display:none;
+	}
+		#galleryContainer div {
+			clear:both;
+			text-align:center;
+		}
+		
+		#galleryContainer img {
+			width:338px;
+			height:338px;
+			margin-bottom: -10px;
+			margin-top: -9px;
+		}
+
+		#galleryText{
+			opacity: .7;
+
+			width: 145px;
+
+			font-size: 16px;
+			font-family: Helvetica;
+			font-weight: 100;
+
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 7px;
+			padding-bottom: 4px;
+			top: -44px;
+
+			padding-top: 5px;
+
+			background-color: white;
+
+			border-radius: 10px;
+		}
+		
+	#galleryBackButton {
+		display:none;
+	}
+
+
+
+	</style>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <script src="//libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+	<script type="text/javascript">
+		
+		var recordImages = [];
+		
+		$(function () {
+			if (window.location.hash.indexOf('record') > -1) loadDetails(window.location.hash.substr(1));
+			else loadRecords();
+		});
+		
+		function loadRecords () {
+			$.ajax('http://mattm.cartodb.com/api/v2/sql?q=SELECT * FROM ghana_iuu_data_test ORDER BY iuu_eventTime DESC&api_key=ee7a6ed02cc520814fb72e69297df9f426f25ea8',{
+				dataType:'jsonp',
+				complete:function (hr, status) {
+					if (status == 'success') return true;
+					alert('Status: ' + status);
+				},
+				success:function (data) {
+					if (!data.rows.length) {
+						alert('No data');
+						return false;
+					}
+					
+					var ids = [];
+					for (var i = 0; i < data.rows.length; i++) {
+						ids.push(data.rows[i].cartodb_id);
+						var dt = new Date(data.rows[i].iuu_eventtime);
+						var html = '<div class="rowMain">';
+				 		if (data.rows[i].iuu_eventvessel) html += '<div class="pictureMain" id="record' + data.rows[i].iuu_eventvessel + '">';
+						else html += '<div class="pictureMain">';
+						html += '<img src="' + data.rows[i].iuu_eventthumbnailurl + '" alt="" />' +
+				 		'</div><div class="infoMain"><div class="boatName">';
+						if (data.rows[i].iuu_eventvessel) html += data.rows[i].iuu_eventvessel;
+				 		html += '</div><div class="lastSeen">Seen at: ' + formatDateTime(dt.getMonth() + 1) + '/' + formatDateTime(dt.getDate()) + '/' + dt.getFullYear() + ' ' + formatDateTime(dt.getHours()) + ':' + formatDateTime(dt.getMinutes()) + '</div>' +
+						'<div class="username">Seen by: ' + data.rows[i].iuu_eventreport_username + '</div>' +
+				 		'</div></div>';
+						$('#screen').append(html);
+					}
+					
+					// 
+					$.ajax('http://mattm.cartodb.com/api/v2/sql?q=UPDATE ghana_iuu_data_test SET iuu_eventlastviewed = now() WHERE cartodb_id IN (' + ids.join(',') + ')&api_key=ee7a6ed02cc520814fb72e69297df9f426f25ea8');
+					
+					$('.pictureMain').on('click', function () {
+						if (!$(this).attr('id')) return false;
+						window.location.href = '#' + $(this).attr('id');
+						loadDetails($(this).attr('id'));
+					});
+				}
+			});
+		}
+		
+		function loadDetails (recordID) {
+			if (!recordID) return false;
+			recordID = recordID.substr(6);
+			$.ajax('http://mattm.cartodb.com/api/v2/sql?q=SELECT * FROM ghana_iuu_data_test WHERE iuu_eventvessel = \'' + recordID + '\' ORDER BY iuu_eventTime DESC&api_key=ee7a6ed02cc520814fb72e69297df9f426f25ea8',{
+				dataType:'jsonp',
+				complete:function (hr, status) {
+					if (status == 'success') return true;
+					alert('Status: ' + status);
+				},
+				success:function (data) {
+					if (!data.rows.length) {
+						alert('No data');
+						return false;
+					}
+					
+					var html_test = '<div class="banner-2">' +
+						'<div id="backButton">' + 
+							'<img src="http://students.washington.edu/bacm/RolloverWhiteBackArrow.png" alt="Back" />' +
+						'</div>' +
+						'<div id="galleryBackButton">' + 
+							'<img src="http://students.washington.edu/bacm/RolloverWhiteBackArrow.png" alt="Back" />' +
+						'</div>' +
+						'<div class="trawlCatcher-2">' +
+							  data.rows[0].iuu_eventvessel +
+						'</div>' +
+					'</div>';
+					
+					html_test += '<div id="screen2-2">' +
+							'<div id="galleryContainer"><div id="galleryText"></div></div>' +
+							'<div class="rowMain-2">' +
+							 	'<div class="pictureMain-2">' +
+									'<img style="height: 150px; width: 150px;" src="' + data.rows[0].iuu_eventimageurl + '" alt="">' +
+							 	'</div>' +
+							 	'<div class="infoTop-2">' +
+							 		'Sightings: ' + data.rows.length + 
+							 	'</div>' +
+							 	'<div class="infoTop-2">' +
+							 		'Illegal: ' + data.rows.length + 
+							 	'</div>' +
+							'</div>';
+					
+					html_test += '<div id="map"></div>';				 	
+					
+					for(var i = 0; i < data.rows.length; i++)
+					{
+						var dt_test = new Date(data.rows[i].iuu_eventtime);
+						var dateString = formatDateTime(dt_test.getMonth() + 1) + '/' + formatDateTime(dt_test.getDate()) + '/' + dt_test.getFullYear() + ' ' + formatDateTime(dt_test.getHours()) + ':' + formatDateTime(dt_test.getMinutes());
+						recordImages.push({url:data.rows[i].iuu_eventimageurl, time:dateString});
+						
+						html_test += '<div class="infoMain-2">' +
+					 		'<div class="lastSeen-2">' +
+					 			  dateString + 
+					 		'</div>' + 
+					 		'<div class="location-2">' +
+					 			'(' + data.rows[i].iuu_eventlat.substr(0, (data.rows[i].iuu_eventlat.indexOf('.') + 3))  + ', ' + data.rows[i].iuu_eventlng.substr(0, (data.rows[i].iuu_eventlng.indexOf('.') + 3)) + ')' +
+							'</div>' +
+					 	'</div>';
+					}
+					
+					html_test += '</div>';
+					
+					$('#screen').html(html_test);
+					$('#backButton').on('click', backButton_click);
+					$('.pictureMain-2 img').on('click', function () {
+						showGallery();
+					});
+					loadDetailMap(recordID, data.rows[0].iuu_eventlat, data.rows[0].iuu_eventlng);
+				}
+			});
+		}
+		
+		function loadDetailMap (recordID, lat, lng) {
+			cartodb.createVis('map', 'http://mattm.cartodb.com/api/v2/viz/028a3a08-f3fd-11e3-9ea4-0e10bcd91c2b/viz.json', {
+				shareable: false,
+				title: false,
+				description: false,
+				search: false,
+				tiles_loader: true,
+				center_lat: lat,
+				center_lon: lng,
+				zoom: 16,
+				zoomControl:true,
+				scrollwheel:false
+			})
+			.done(function(vis, layers) {
+			  // layer 0 is the base layer, layer 1 is cartodb layer
+			  // setInteraction is disabled by default
+			  layers[1].setInteraction(true);
+			  layers[1].on('featureOver', function(e, pos, latlng, data) {
+				cartodb.log.log(e, pos, latlng, data);
+			  });
+	
+			  // you can get the native map to work with it
+			  // depending if you use google maps or leaflet
+			  
+			  
+			  map = vis.getNativeMap();
+	
+			  // now, perform any operations you need
+			  // map.setZoom(3)
+			  // map.setCenter(new google.maps.Latlng(...))
+			  // create a layer with 1 sublayer
+			  
+			  
+			cartodb.createLayer(map, {
+				user_name: 'mattm',
+				type: 'cartodb',
+				sublayers: [{
+					sql: "SELECT * FROM ca_mpa_110713",
+					cartocss:'#ca_mpa_110713{polygon-fill: #0F3B82;polygon-opacity: 0.3;line-color: #FFF;line-width: 1;line-opacity: 1;}'
+				}]
+			})
+			.addTo(map)
+			.error(function(err) {
+			  alert('An error has occurred in creating the map. Details: ' + err);
+			})
+			.done(function (layer) {
+				layer.createSubLayer({
+					sql: "SELECT * FROM ghana_iuu_data_test WHERE iuu_eventvessel = '" + recordID + "'",
+					cartocss:'#ghana_iuu_data_test {marker-fill: #F11810; marker-width: 12; marker-line-color: #FFF; marker-line-width: 1; marker-line-opacity: 1; marker-fill-opacity: 0.9; marker-comp-op: multiply; marker-type: ellipse; marker-placement: point; marker-allow-overlap: true; marker-clip: false; marker-multi-policy: largest; }'
+				 });
+			});
+      })}
+	  
+	  function backButton_click () {
+		window.location.href = './';
+	  }
+	  
+	  function showGallery () {
+		if ($('#galleryContainer img').size() == 0) {
+			for (var i = 0; i < recordImages.length; i++) {
+				$('#galleryContainer').append('<div><img src="' + recordImages[i].url + '"</div>' + '<div id="galleryText">' + recordImages[i].time + '</div>');
+			}
+		}
+		
+		$('.rowMain-2, #map, .infoMain-2, #backButton').hide();
+		$('#galleryContainer, #galleryBackButton, #galleryText').show();
+		
+		$('#galleryBackButton img').on('click', hideGallery);
+	  }
+	  
+	  function hideGallery () {
+		$('#galleryContainer, #galleryBackButton, #galleryText').hide();
+		$('.rowMain-2, #map, .infoMain-2, #backButton').show();
+	  }
+	  
+	  function formatDateTime (val) {
+		return (val.toString().length == 1) ? '0' + val : val;
+	  }
+	
+	</script>
+</head>
+<body>
+	
+	<div id="screen">
+		<div class="banner">
+			<div class="trawlCatcher">
+				ShipWatch
+			</div>
+		</div>
+		
+		<!--<div class="switchMain">
+			<div class="search">
+				Most Recent || Search
+			</div>
+		</div>-->
+
+	<div id="searchContainer">
+	<!--<form action="">
+	        <div class="switchMain">
+	                <input id="recent" name="switch" type="radio" checked>
+	                	<label for="recent" onclick="">Recent</label>
+	 
+	                <input id="search" name="switch" type="radio">
+	                	<label for="search" onclick="">Search</label>
+	                <a></a>
+	        </div>
+       
+        </form> -->
+        <div>
+	        <form action="">
+	            <input class="searchBox" type="text" placeholder="Search..." name="query">
+	        </form>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
