@@ -1,4 +1,4 @@
-shipwatch
+ShipWatch
 =========
 
 Citizen science tool to track illegal, unreported, and unregulated (IUU) fishing
