@@ -11,15 +11,13 @@ Colin Gremillion,
 Matt Merrifield
 
 
-## Features
+## How to use it
 
 * Use Instagram to take photos of illegal activity
-* Can be configured to allow any user on the system to create and deploy their own Shiny applications
-* Supports non-websocket-capable browsers, like IE8/9
-* Free and open source ([AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html) license)
-* Pre-built installers for select Linux distributions.
+* Tag the photos with #Trawl123 and #IMO(VesselNumber)
+* Free and open source ([GNUv2](http://www.gnu.org/licenses/gpl-2.0.html) license)
 * **Experimental quality. Use at your own risk!**
 
-## How to use it
+
 
 
